@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GitHub Starred · 成人与擦边项目收藏集 - paipiange</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background-color: #fbfbfd;
+      color: #1e293b;
+    }
+    .custom-shadow {
+      box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.04), 0 1px 2px -1px rgba(0, 0, 0, 0.04);
+    }
+    .custom-shadow-hover {
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.02);
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col selection:bg-rose-100 selection:text-rose-900">
+
+  <!-- Header -->
+  <header class="bg-white/80 backdrop-blur-md border-b border-slate-200/80 sticky top-0 z-30">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex flex-wrap items-center justify-between gap-4">
+      <div class="flex items-center space-x-3.5">
+        <div class="w-10 h-10 rounded-full bg-slate-100 border border-slate-200 flex items-center justify-center text-lg overflow-hidden shadow-sm">
+          <img src="https://avatars.githubusercontent.com/u/153693696?v=4" onerror="this.src='https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png'" class="w-full h-full object-cover" alt="paipiange">
+        </div>
+        <div>
+          <div class="flex items-center space-x-2">
+            <h1 class="text-base font-semibold text-slate-900 tracking-tight">paipiange 的成人与擦边 Star 收藏集</h1>
+            <span class="text-xs px-2 py-0.5 rounded-full bg-slate-100 text-slate-600 font-medium border border-slate-200">12 个精选项目</span>
+          </div>
+          <p class="text-xs text-slate-500">白色极简风格 · 提取自 1,116 个 Star 项目中的全部成人类与关联工具</p>
+        </div>
+      </div>
+
+      <!-- Header stats pill -->
+      <div class="flex items-center gap-2 text-xs">
+        <span class="inline-flex items-center px-2.5 py-1 rounded-full bg-rose-50 text-rose-700 border border-rose-200/80 font-medium">
+          🔞 核心成人 9 项
+        </span>
+        <span class="inline-flex items-center px-2.5 py-1 rounded-full bg-amber-50 text-amber-700 border border-amber-200/80 font-medium">
+          ⚠️ 擦边关联 3 项
+        </span>
+        <a href="https://github.com/paipiange" target="_blank" class="inline-flex items-center px-3 py-1 rounded-full bg-slate-900 hover:bg-slate-800 text-white font-medium transition-colors">
+          GitHub 个人主页 ↗
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex-1 w-full space-y-6">
+
+    <!-- Overview Bar -->
+    <div class="bg-white rounded-2xl p-6 border border-slate-200/90 custom-shadow">
+      <div class="max-w-3xl">
+        <h2 class="text-xl font-bold text-slate-900 tracking-tight">项目分类总览</h2>
+        <p class="text-sm text-slate-600 mt-1.5 leading-relaxed">
+          已从你的账号收藏中剔除非成人内容，精准保留了 <strong>9 个核心成人项目</strong>（覆盖本地影音库、演员头像刮削、R18检索、18禁漫画下载、NSFW-AI模型、去码修复等）与 <strong>3 个高关联工具</strong>（视频马赛克处理、抖音颜值筛选、角色扮演前端）。
+        </p>
+      </div>
+
+      <!-- Category Filter Pills -->
+      <div class="mt-5 flex flex-wrap gap-2 text-xs border-t border-slate-100 pt-4">
+        <button onclick="setFilter('ALL')" id="btn-all" class="px-3 py-1.5 rounded-lg font-medium transition-all bg-slate-900 text-white shadow-sm">
+          全部项目 (12)
+        </button>
+        <button onclick="setFilter('core')" id="btn-core" class="px-3 py-1.5 rounded-lg font-medium transition-all bg-slate-100 text-slate-600 hover:bg-rose-50 hover:text-rose-700">
+          🔞 核心成人 (9)
+        </button>
+        <button onclick="setFilter('related')" id="btn-related" class="px-3 py-1.5 rounded-lg font-medium transition-all bg-slate-100 text-slate-600 hover:bg-amber-50 hover:text-amber-700">
+          ⚠️ 擦边关联 (3)
+        </button>
+      </div>
+    </div>
+
+    <!-- Search and Controls -->
+    <div class="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3">
+      <div class="relative flex-1 max-w-md">
+        <input
+          id="search-input"
+          type="text"
+          placeholder="搜索项目、说明、语言或标签 (如 stash, jmcomic, jav, ai)..."
+          class="w-full pl-9 pr-4 py-2 bg-white border border-slate-200 rounded-xl text-sm text-slate-900 placeholder-slate-400 focus:outline-none focus:border-slate-400 focus:ring-2 focus:ring-slate-100 transition-all custom-shadow"
+        >
+        <svg class="w-4 h-4 text-slate-400 absolute left-3 top-2.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+        </svg>
+      </div>
+
+      <div class="flex items-center gap-2">
+        <span class="text-xs text-slate-500 whitespace-nowrap">排序方式:</span>
+        <select id="sort-select" class="px-3 py-2 bg-white border border-slate-200 rounded-xl text-xs text-slate-700 focus:outline-none focus:border-slate-400 transition-all custom-shadow">
+          <option value="starred_desc">Star 收藏时间 (最近在先)</option>
+          <option value="stars_desc">⭐ Stars 数量 (从高到低)</option>
+          <option value="name_asc">项目名称 (A-Z)</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Count indicator -->
+    <div class="text-xs text-slate-500 px-1 flex items-center justify-between">
+      <span>显示 <strong id="display-count" class="text-slate-900">12</strong> 个项目</span>
+      <span class="text-slate-400">点击卡片右上角可一键复制 clone 命令</span>
+    </div>
+
+    <!-- Repo Cards Grid -->
+    <div id="cards-container" class="grid grid-cols-1 md:grid-cols-2 gap-5">
+      <!-- Injected by JS -->
+    </div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="mt-12 border-t border-slate-200/80 bg-white py-6 text-center text-xs text-slate-500">
+    <div class="max-w-6xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-2">
+      <p>由 GitHub CLI (gh) 自动读取生成 · paipiange 私人 Star 整理集</p>
+      <p class="text-slate-400">单文件纯净极简 HTML · 离线可用</p>
+    </div>
+  </footer>
+
+  <!-- Embedded Data -->
+  <script>
+    const REPOS = [{"id":1339970099,"name":"peach","full_name":"peach-mitao/peach","owner":{"login":"peach-mitao","avatar_url":"https://avatars.githubusercontent.com/u/335372553?v=4","html_url":"https://github.com/peach-mitao"},"html_url":"https://github.com/peach-mitao/peach","description":"Peach 蜜桃：单用户、本地优先的个人媒体系统 · Single-user, local-first personal media system","stars":11912,"forks":1420,"language":"Python","topics":["jav","local-first","media-library","media-manager","python","react","self-hosted","video-player"],"updated_at":"2026-10-26T08:19:58Z","starred_at":"2026-10-23T07:42:32Z","mainCategory":"成人类","isAdult":true,"isAdultRelated":false,"adultInfo":{"category":"JAV本地影音库","badge":"🔞 核心成人类","type":"core","reason":"Peach 蜜桃：单用户、本地优先的JAV与个人私密媒体管理播放系统"}},{"id":1416386910,"name":"qwen21-nsfw-pose-skill","full_name":"Arekejoker/qwen21-nsfw-pose-skill","owner":{"login":"Arekejoker","avatar_url":"https://avatars.githubusercontent.com/u/131444687?v=4","html_url":"https://github.com/Arekejoker"},"html_url":"https://github.com/Arekejoker/qwen21-nsfw-pose-skill","description":"Qwen-Image 2.1 NSFW/姿势出图 skill：作者级提示词配方 + NSFW LoRA + 136 姿势 VNCCS 人偶控制；适用 Claude Code / Codex / Cursor / OpenClaw","stars":3737,"forks":659,"language":"Python","topics":["agent-skill","comfyui","image-generation","openclaw","pose-control","qwen-image"],"updated_at":"2026-10-26T08:01:07Z","starred_at":"2026-10-19T01:41:59Z","mainCategory":"成人类","isAdult":true,"isAdultRelated":false,"adultInfo":{"category":"NSFW-AI生成","badge":"🔞 核心成人类","type":"core","reason":"Qwen-Image 2.1 NSFW/姿势出图 skill：NSFW LoRA + 136 姿势 VNCCS 人偶控制"}},{"id":864501918,"name":"jmcomic-downloader","full_name":"lanyeeee/jmcomic-downloader","owner":{"login":"lanyeeee","avatar_url":"https://avatars.githubusercontent.com/u/73207840?v=4","html_url":"https://github.com/lanyeeee"},"html_url":"https://github.com/lanyeeee/jmcomic-downloader","description":"禁漫天堂 18comic.vip jmcomic 18comic 的多线程下载器，带图形界面 带收藏夹 免费下载收费的漫画，已打包exe 下载速度飞快","stars":1726,"forks":109,"language":"Rust","topics":["18comic","downloader","gui","jmcomic","naive-ui","rust","tauri","tauri-app","vue"],"updated_at":"2026-10-25T13:01:13Z","starred_at":"2025-12-26T03:18:59Z","mainCategory":"成人类","isAdult":true,"isAdultRelated":false,"adultInfo":{"category":"18禁漫画下载","badge":"🔞 核心成人类","type":"core","reason":"禁漫天堂 (18comic.vip / jmcomic) 多线程漫画下载器，带GUI与收藏夹"}},{"id":880240067,"name":"lada","full_name":"ladaapp/lada","owner":{"login":"ladaapp","avatar_url":"https://avatars.githubusercontent.com/u/186698386?v=4","html_url":"https://github.com/ladaapp"},"html_url":"https://github.com/ladaapp/lada","description":"Restore videos with pixelated/mosaic regions","stars":6236,"forks":654,"language":"Python","topics":["depixelization","jav-restoration","mosaic-removal"],"updated_at":"2026-10-26T05:43:42Z","starred_at":"2025-11-18T11:19:41Z","mainCategory":"成人类","isAdult":true,"isAdultRelated":false,"adultInfo":{"category":"去马赛克/JAV修复","badge":"🔞 核心成人类","type":"core","reason":"利用深度学习算法还原修复视频中马赛克/像素化区域 (JAV restoration)"}},{"id":991037318,"name":"jav-play","full_name":"aizhimou/jav-play","owner":{"login":"aizhimou","avatar_url":"https://avatars.githubusercontent.com/u/19943786?v=4","html_url":"https://github.com/aizhimou"},"html_url":"https://github.com/aizhimou/jav-play","description":"A browser extension that allows users to call the local player to play the movie directly on the movie details page of javdb.com (NSFW)","stars":705,"forks":46,"language":"TypeScript","topics":["browser-extension","javdb","javlibrary","nsfw"],"updated_at":"2026-10-22T09:14:06Z","starred_at":"2025-05-29T03:46:01Z","mainCategory":"成人类","isAdult":true,"isAdultRelated":false,"adultInfo":{"category":"JAV浏览/本地播放","badge":"🔞 核心成人类","type":"core","reason":"JAVDB / Javlibrary 详情页一键调用本地播放器播放影片的浏览器扩展 (NSFW)"}},{"id":967262679,"name":"sex-agreement-app","full_name":"123xiao/sex-agreement-app","owner":{"login":"123xiao","avatar_url":"https://avatars.githubusercontent.com/u/17847207?v=4","html_url":"https://github.com/123xiao"},"html_url":"https://github.com/123xiao/sex-agreement-app","description":"X行为同意协议系统","stars":1195,"forks":143,"language":"TypeScript","topics":[],"updated_at":"2026-10-22T07:15:39Z","starred_at":"2025-04-16T08:12:48Z","mainCategory":"成人类","isAdult":true,"isAdultRelated":false,"adultInfo":{"category":"成人协议工具","badge":"🔞 核心成人类","type":"core","reason":"性行为知情同意与协议签署应用系统"}},{"id":240159577,"name":"gfriends","full_name":"gfriends/gfriends","owner":{"login":"gfriends","avatar_url":"https://avatars.githubusercontent.com/u/109220009?v=4","html_url":"https://github.com/gfriends"},"html_url":"https://github.com/gfriends/gfriends","description":"媒体服务器演员头像仓库","stars":2917,"forks":919,"language":"","topics":["adults","avatar","emby","jav","jav-scraper","jellyfin","plex"],"updated_at":"2026-10-26T03:56:32Z","starred_at":"2025-03-27T02:19:32Z","mainCategory":"成人类","isAdult":true,"isAdultRelated":false,"adultInfo":{"category":"女优头像/JAV刮削","badge":"🔞 核心成人类","type":"core","reason":"Emby / Jellyfin / Plex 媒体服务器女优头像与AV演员元数据仓库"}},{"id":135951540,"name":"stash","full_name":"stashapp/stash","owner":{"login":"stashapp","avatar_url":"https://avatars.githubusercontent.com/u/24867479?v=4","html_url":"https://github.com/stashapp"},"html_url":"https://github.com/stashapp/stash","description":"An organizer for your porn, written in Go.  Documentation:  https://docs.stashapp.cc","stars":13285,"forks":1217,"language":"Go","topics":["go","golang","graphql","hacktoberfest","json","media","organize","organizer","porn","video"],"updated_at":"2026-10-26T07:22:15Z","starred_at":"2025-03-27T02:19:18Z","mainCategory":"成人类","isAdult":true,"isAdultRelated":false,"adultInfo":{"category":"成人影音管理","badge":"🔞 核心成人类","type":"core","reason":"本地成人影视/Porn媒体中心（支持演员库、标签系统、Studio元数据刮削，Go编写）"}},{"id":944388879,"name":"avhub","full_name":"levywang/avhub","owner":{"login":"levywang","avatar_url":"https://avatars.githubusercontent.com/u/16538263?v=4","html_url":"https://github.com/levywang"},"html_url":"https://github.com/levywang/avhub","description":"R18 Resource Search & Management Tool","stars":2744,"forks":281,"language":"Vue","topics":[],"updated_at":"2026-10-25T06:39:54Z","starred_at":"2025-03-14T10:55:45Z","mainCategory":"成人类","isAdult":true,"isAdultRelated":false,"adultInfo":{"category":"R18影视/资源检索","badge":"🔞 核心成人类","type":"core","reason":"R18 成人影视资源搜索与个人资源管理工具"}},{"id":599524116,"name":"SillyTavern","full_name":"SillyTavern/SillyTavern","owner":{"login":"SillyTavern","avatar_url":"https://avatars.githubusercontent.com/u/134869877?v=4","html_url":"https://github.com/SillyTavern"},"html_url":"https://github.com/SillyTavern/SillyTavern","description":"LLM Frontend for Power Users.","stars":34953,"forks":6571,"language":"JavaScript","topics":["ai","chat","llm"],"updated_at":"2026-10-26T07:37:53Z","starred_at":"2024-06-18T02:31:33Z","mainCategory":"成人关联/擦边","isAdult":false,"isAdultRelated":true,"adultInfo":{"category":"角色扮演/酒馆RP","badge":"⚠️ 角色扮演/NSFW前端","type":"related","reason":"Power User 大模型前端，广泛用于无审查/角色扮演(ERP)与互动叙事"}},{"id":173990533,"name":"DeepMosaics","full_name":"HypoX64/DeepMosaics","owner":{"login":"HypoX64","avatar_url":"https://avatars.githubusercontent.com/u/35624681?v=4","html_url":"https://github.com/HypoX64"},"html_url":"https://github.com/HypoX64/DeepMosaics","description":"Automatically remove the mosaics in images and videos, or add mosaics to them.","stars":2664,"forks":490,"language":"Python","topics":["computer-vision","deep-learning","mosaic","pytorch","video-inpainting"],"updated_at":"2026-10-26T07:29:43Z","starred_at":"2024-01-09T07:27:06Z","mainCategory":"成人关联/擦边","isAdult":false,"isAdultRelated":true,"adultInfo":{"category":"去马赛克/AI图像处理","badge":"⚠️ 成人关联/工具","type":"related","reason":"基于深度学习自动去除或添加图片与视频马赛克（常用于画质还原）"}},{"id":135050068,"name":"Douyin-Bot","full_name":"wangshub/Douyin-Bot","owner":{"login":"wangshub","avatar_url":"https://avatars.githubusercontent.com/u/20924010?v=4","html_url":"https://github.com/wangshub"},"html_url":"https://github.com/wangshub/Douyin-Bot","description":"😍 Python 抖音机器人，论如何在抖音上找到漂亮小姐姐？ ","stars":9652,"forks":1893,"language":"Python","topics":[],"updated_at":"2026-10-26T06:42:32Z","starred_at":"2023-07-20T02:48:07Z","mainCategory":"成人关联/擦边","isAdult":false,"isAdultRelated":true,"adultInfo":{"category":"小姐姐筛选/自动化","badge":"⚠️ 擦边/美女筛选","type":"related","reason":"Python 抖音机器人，自动化人脸识别与漂亮小姐姐视频筛选"}}];
+    let activeFilter = 'ALL';
+    let currentSearch = '';
+    let currentSort = 'starred_desc';
+
+    function init() {
+      setupEvents();
+      render();
+    }
+
+    function setupEvents() {
+      const searchInput = document.getElementById('search-input');
+      searchInput.addEventListener('input', (e) => {
+        currentSearch = e.target.value.trim().toLowerCase();
+        render();
+      });
+
+      document.getElementById('sort-select').addEventListener('change', (e) => {
+        currentSort = e.target.value;
+        render();
+      });
+    }
+
+    function setFilter(type) {
+      activeFilter = type;
+      
+      const btnAll = document.getElementById('btn-all');
+      const btnCore = document.getElementById('btn-core');
+      const btnRelated = document.getElementById('btn-related');
+
+      // Reset
+      [btnAll, btnCore, btnRelated].forEach(b => {
+        b.className = 'px-3 py-1.5 rounded-lg font-medium transition-all bg-slate-100 text-slate-600 hover:bg-slate-200';
+      });
+
+      if (type === 'ALL') {
+        btnAll.className = 'px-3 py-1.5 rounded-lg font-medium transition-all bg-slate-900 text-white shadow-sm';
+      } else if (type === 'core') {
+        btnCore.className = 'px-3 py-1.5 rounded-lg font-medium transition-all bg-rose-600 text-white shadow-sm';
+      } else if (type === 'related') {
+        btnRelated.className = 'px-3 py-1.5 rounded-lg font-medium transition-all bg-amber-600 text-white shadow-sm';
+      }
+
+      render();
+    }
+
+    function render() {
+      let filtered = REPOS.filter(repo => {
+        if (activeFilter === 'core' && !repo.isAdult) return false;
+        if (activeFilter === 'related' && !repo.isAdultRelated) return false;
+
+        if (currentSearch) {
+          const matchName = repo.full_name.toLowerCase().includes(currentSearch);
+          const matchDesc = (repo.description || '').toLowerCase().includes(currentSearch);
+          const matchCategory = repo.adultInfo ? (repo.adultInfo.category + repo.adultInfo.reason).toLowerCase().includes(currentSearch) : false;
+          const matchTopics = (repo.topics || []).some(t => t.toLowerCase().includes(currentSearch));
+          const matchLang = (repo.language || '').toLowerCase().includes(currentSearch);
+          if (!matchName && !matchDesc && !matchCategory && !matchTopics && !matchLang) {
+            return false;
+          }
+        }
+        return true;
+      });
+
+      // Sort
+      filtered.sort((a, b) => {
+        if (currentSort === 'stars_desc') return (b.stars || 0) - (a.stars || 0);
+        if (currentSort === 'name_asc') return a.full_name.localeCompare(b.full_name);
+        return new Date(b.starred_at || 0) - new Date(a.starred_at || 0);
+      });
+
+      document.getElementById('display-count').innerText = filtered.length;
+      const container = document.getElementById('cards-container');
+
+      if (filtered.length === 0) {
+        container.innerHTML = `<div class="col-span-full py-16 text-center text-slate-400">
+          <p class="text-3xl mb-2">🔍</p>
+          <p class="text-sm font-medium text-slate-600">没有匹配到相关项目</p>
+        </div>`;
+        return;
+      }
+
+      const langColors = {
+        Python: '#3572A5',
+        JavaScript: '#f1e05a',
+        TypeScript: '#3178c6',
+        Go: '#00ADD8',
+        Rust: '#dea584',
+        Vue: '#41b883'
+      };
+
+      container.innerHTML = filtered.map(r => {
+        const isCore = r.isAdult;
+        const badgeType = isCore 
+          ? `<span class="px-2.5 py-0.5 rounded-full text-xs font-semibold bg-rose-50 text-rose-700 border border-rose-200">🔞 核心成人</span>`
+          : `<span class="px-2.5 py-0.5 rounded-full text-xs font-semibold bg-amber-50 text-amber-700 border border-amber-200">⚠️ 擦边/关联</span>`;
+
+        const subCategoryBadge = `<span class="px-2.5 py-0.5 rounded-full text-xs font-medium bg-slate-100 text-slate-700 border border-slate-200">${r.adultInfo.category}</span>`;
+
+        const dotColor = langColors[r.language] || '#94a3b8';
+        const starDate = r.starred_at ? new Date(r.starred_at).toISOString().split('T')[0] : '';
+
+        return `
+        <div class="bg-white border border-slate-200/90 rounded-2xl p-6 custom-shadow hover:custom-shadow-hover hover:border-slate-300 transition-all flex flex-col justify-between group">
+          <div>
+            <!-- Header badges & actions -->
+            <div class="flex items-center justify-between gap-2 mb-3">
+              <div class="flex items-center gap-1.5 flex-wrap">
+                ${badgeType}
+                ${subCategoryBadge}
+              </div>
+              <div class="flex items-center gap-1">
+                <button onclick="copyClone('${r.html_url}')" title="复制 git clone 命令" class="p-1.5 rounded-lg text-slate-400 hover:text-slate-800 hover:bg-slate-100 transition-colors">
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+                  </svg>
+                </button>
+                <a href="${r.html_url}" target="_blank" title="前往 GitHub 仓库" class="p-1.5 rounded-lg text-slate-400 hover:text-slate-800 hover:bg-slate-100 transition-colors">
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                  </svg>
+                </a>
+              </div>
+            </div>
+
+            <!-- Repo Full Name -->
+            <h3 class="text-base font-bold text-slate-900 group-hover:text-rose-600 transition-colors">
+              <a href="${r.html_url}" target="_blank" class="inline-flex items-center gap-1">
+                <span>${r.full_name}</span>
+              </a>
+            </h3>
+
+            <!-- Functional explanation callout -->
+            <div class="mt-3 mb-3 p-3 rounded-xl bg-slate-50 border border-slate-150 text-xs text-slate-700 leading-relaxed">
+              <span class="font-semibold text-slate-900">功能简述：</span>${r.adultInfo.reason}
+            </div>
+
+            <!-- Original Description -->
+            <p class="text-xs text-slate-500 line-clamp-2 leading-relaxed mb-4">
+              ${r.description || '暂无官方描述'}
+            </p>
+
+            <!-- Topics -->
+            ${(r.topics && r.topics.length > 0) ? `
+              <div class="flex flex-wrap gap-1.5 mb-4">
+                ${r.topics.slice(0, 5).map(t => `
+                  <span class="text-[11px] px-2 py-0.5 rounded-md bg-slate-100 text-slate-600 border border-slate-200/60 font-mono">
+                    #${t}
+                  </span>
+                `).join('')}
+              </div>
+            ` : ''}
+          </div>
+
+          <!-- Footer meta -->
+          <div class="pt-3.5 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500">
+            <div class="flex items-center gap-3">
+              ${r.language ? `
+                <span class="inline-flex items-center gap-1.5">
+                  <span class="w-2 h-2 rounded-full" style="background-color: ${dotColor}"></span>
+                  <span class="text-slate-700 font-medium">${r.language}</span>
+                </span>
+              ` : '<span class="text-slate-400">未知</span>'}
+              <span class="inline-flex items-center gap-1">
+                ⭐ ${(r.stars || 0).toLocaleString()}
+              </span>
+              <span class="inline-flex items-center gap-1">
+                🍴 ${(r.forks || 0).toLocaleString()}
+              </span>
+            </div>
+
+            <div class="flex items-center gap-2">
+              <span class="text-[11px] text-slate-400">⭐ ${starDate}</span>
+              <a href="${r.html_url}" target="_blank" class="text-xs font-semibold text-rose-600 hover:text-rose-700 pl-2">
+                访问仓库 →
+              </a>
+            </div>
+          </div>
+        </div>
+        `;
+      }).join('');
+    }
+
+    function copyClone(url) {
+      const cmd = `git clone ${url}.git`;
+      navigator.clipboard.writeText(cmd).then(() => {
+        alert('已复制克隆命令: ' + cmd);
+      }).catch(() => {
+        alert('复制失败，命令为: ' + cmd);
+      });
+    }
+
+    init();
+  </script>
+</body>
+</html>
